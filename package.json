@@ -1,0 +1,43 @@
+{
+  "name": "hk-spirits-wine-distribution-app",
+  "version": "0.1.0",
+  "description": "Mobile-first HK spirits & wine distribution app backend",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "modules/*"
+  ],
+  "scripts": {
+    "dev": "ts-node apps/api/src/server.ts",
+    "build": "tsc --build",
+    "start": "node dist/apps/api/src/server.js",
+    "lint": "eslint . --ext .ts",
+    "test": "jest",
+    "migrate": "knex --knexfile packages/db/knexfile.ts migrate:latest",
+    "seed": "knex --knexfile packages/db/knexfile.ts seed:run"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.0",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.0",
+    "eslint": "^8.57.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "pg": "^8.11.3",
+    "zod": "^3.22.4"
+  }
+}
